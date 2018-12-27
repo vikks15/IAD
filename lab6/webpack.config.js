@@ -7,7 +7,7 @@ const build = path.resolve(__dirname, 'build');
 
 
 module.exports = {
-  entry: path.resolve(src,'index.js'),
+  entry: path.resolve(src,'components/index.js'),
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
@@ -31,7 +31,11 @@ module.exports = {
 						}
 					}
 				]
-			},
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ]
   },
   devServer: {  
@@ -46,7 +50,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'SPA',
       filename: path.resolve(__dirname, 'build/index.html'),
-      template: path.resolve(__dirname, 'src/indextmpl.html'),
+      template: path.resolve(__dirname, 'src/components/indextmpl.html'),
     }),
   ]
 }

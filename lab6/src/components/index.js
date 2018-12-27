@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import img1 from './img/img1.png';
-
+import { AppContainer } from 'react-hot-loader';
+import App from './App/App.js';
 
 ReactDOM.render(
-    <h1>
-        hello worldd!
-        <img src={img1} />
-    </h1>,
+    <AppContainer>
+        <App />
+    </AppContainer>,
     document.getElementById('root')
 );
 
